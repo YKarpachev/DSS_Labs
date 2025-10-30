@@ -1,0 +1,35 @@
+[Meta]
+- input_file: kaggle_nvda_processed.csv
+- rows_loaded: 138658
+- start: 1999-01-22 09:30:00
+- end: 2020-04-01 15:45:00
+- config: {'BAR_MINUTES': 15, 'RET_MAX_ABS': 0.35, 'RET_MAD_Z': 9.0, 'VOL_MAD_Z': 9.0, 'ROLL_BARS_RET': 200, 'ROLL_BARS_VOL': 500, 'MIN_WINDOW': 100, 'KEEP_ONLY_RTH': True, 'UNIFORMIZE_GRID': True, 'DROP_BAD_DAYS': True, 'MAX_MISS_PER_DAY': 4, 'REQUIRE_POS_VOL': True}
+
+[Steps]
+Step                               Before        After  Dropped  Notes
+filter_market_hours               138,658      138,658        0  
+enforce_candle_validity           138,658      132,030    6,628  neg_price=0; nonpos_vol=0; high<low=0; body_outside=6628
+uniformize_grid_rth               132,030      132,030        0  
+add_session_keys                  132,030      132,030        0  
+time_aware_returns                132,030      132,030        0  
+drop_price_outliers               132,030      130,541    1,489  hard_guard_exceeded=0
+drop_volume_outliers              130,541      130,541        0  
+drop_days_with_many_missing       130,541      120,317   10,224  days_before=5333; days_after=4777; dropped_days=556; avg_bars_on_dropped_days=18.388489208633093; expected_bars_per_day=26
+final_qc                          120,317      120,317        0  
+
+[Post-clean stats]
+- rows: 120,317
+- date_range: 1999-01-22 09:30:00 → 2020-03-26 15:45:00
+- unique_days: 4777
+- bars_expected_per_day(15m_RTH): 26
+- median_gap_minutes_intra: 15.0
+- pct_gaps_eq_15m_intra: 100.0
+- returns.count: 112141
+- returns.mean: -2.014948772298596e-05
+- returns.std: 0.0016971272261611606
+- returns.abs.p95: 0.0035842293906809264
+- returns.abs.p99: 0.006249999999999978
+- volume.mean: 610230.4980925389
+- volume.median: 500352.0
+- log_volume.std: 0.6948324769461587
+- log_volume.p95: 14.165700418814934
