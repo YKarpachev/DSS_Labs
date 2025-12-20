@@ -1,0 +1,355 @@
+:root {
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background: #0b1220;
+    color: #e5e7eb;
+    font-family:
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        sans-serif;
+
+    display: block !important;
+    place-items: unset !important;
+}
+
+#root {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.page {
+    height: 100vh;
+    width: 100%;
+    padding: 18px 22px;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 14px;
+    min-height: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    min-width: 0;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+.subtitle {
+    font-size: 12px;
+    opacity: 0.75;
+    overflow-wrap: anywhere;
+}
+
+.error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    padding: 10px 12px;
+    border-radius: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 10px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    min-width: 0;
+}
+
+.cardLabel {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-bottom: 6px;
+}
+
+.cardValue {
+    font-size: 16px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.mainGrid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 14px;
+    min-height: 0;
+}
+
+.panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    min-height: 0;
+    min-width: 0;
+}
+
+.panelHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: baseline;
+    min-width: 0;
+}
+
+.panelTitle {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.panelMeta {
+    font-size: 12px;
+    opacity: 0.7;
+    text-align: right;
+    overflow-wrap: anywhere;
+    max-width: 60%;
+}
+
+.chartPanel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.chartWrap {
+    flex: 1;
+    min-height: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.actionsPanel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.btn {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e5e7eb;
+    cursor: pointer;
+    font-weight: 650;
+    min-width: 140px;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btnSecondary {
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(99, 102, 241, 0.35);
+}
+
+.btnGhost {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.predBox {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.predTitle {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.muted {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.tableWrap {
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 520px;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.table thead th {
+    font-weight: 800;
+    opacity: 0.9;
+    position: sticky;
+    top: 0;
+    background: #0b1220;
+}
+
+.table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.badge {
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.06);
+    font-weight: 850;
+    white-space: nowrap;
+    max-width: 55vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.badge-sub {
+    font-weight: 600;
+    opacity: 0.75;
+    margin-left: 6px;
+}
+
+.badge-strong-buy {
+    border-color: rgba(34, 197, 94, 0.55);
+    background: rgba(34, 197, 94, 0.12);
+}
+.badge-buy {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: rgba(34, 197, 94, 0.08);
+}
+.badge-neutral {
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.08);
+}
+.badge-sell {
+    border-color: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.08);
+}
+.badge-strong-sell {
+    border-color: rgba(239, 68, 68, 0.55);
+    background: rgba(239, 68, 68, 0.12);
+}
+
+/* ----------------- Responsive breakpoints ----------------- */
+@media (max-width: 1100px) {
+    .page {
+        padding: 16px 16px;
+    }
+    .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+    .panelMeta {
+        max-width: 100%;
+        text-align: left;
+    }
+    .badge {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .title {
+        font-size: 18px;
+    }
+    .panel {
+        padding: 10px;
+    }
+    .btn {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        padding: 12px;
+        gap: 12px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .cardValue {
+        font-size: 15px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 8px;
+        font-size: 12px;
+    }
+}
