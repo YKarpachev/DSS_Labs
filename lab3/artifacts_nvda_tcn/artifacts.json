@@ -1,0 +1,83 @@
+{
+  "config": {
+    "csv": "nvda_15m_clean.csv",
+    "out_dir": "artifacts_nvda_tcn",
+    "lookback": 256,
+    "horizons": [
+      1,
+      2,
+      3
+    ],
+    "batch": 128,
+    "epochs": 30,
+    "lr": 0.002,
+    "weight_decay": 0.001,
+    "dropout": 0.15,
+    "alpha_dir": 0.7,
+    "grad_clip": 1.0,
+    "test_frac": 0.15,
+    "device": "cuda",
+    "seed": 42
+  },
+  "feature_cols": [
+    "log_ret1",
+    "log_ret4",
+    "hl_range",
+    "co_change",
+    "vol_log",
+    "vol_z_96",
+    "rv_32",
+    "rv_96",
+    "z_close_96",
+    "rsi14",
+    "macd_hist",
+    "macd_hist_chg",
+    "atr_pct",
+    "bb_width",
+    "bb_pctb",
+    "ema20",
+    "ema50",
+    "ema_slope",
+    "adx14",
+    "pdi14",
+    "mdi14",
+    "vwap_dist",
+    "tod_sin",
+    "tod_cos",
+    "dow"
+  ],
+  "thresholds": [
+    0.95,
+    0.95,
+    0.95
+  ],
+  "report_test": {
+    "h1": {
+      "threshold": 0.95,
+      "precision": 0.9455292908530318,
+      "accuracy": 0.56549041400389,
+      "f1": 0.19049591054974635,
+      "auc": 0.7558330796168601,
+      "positives_pred": 973,
+      "positives_true": 8686
+    },
+    "h2": {
+      "threshold": 0.95,
+      "precision": 0.8764144663856224,
+      "accuracy": 0.6775771047513198,
+      "f1": 0.576558166690994,
+      "auc": 0.8263740669336102,
+      "positives_pred": 4507,
+      "positives_true": 9195
+    },
+    "h3": {
+      "threshold": 0.95,
+      "precision": 0.9684413394362804,
+      "accuracy": 0.693248124479022,
+      "f1": 0.5929203539823009,
+      "auc": 0.8761338551189162,
+      "positives_pred": 4151,
+      "positives_true": 9409
+    }
+  }
+}
